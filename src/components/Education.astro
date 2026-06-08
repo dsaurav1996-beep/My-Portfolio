@@ -1,0 +1,51 @@
+---
+const education = [
+  {
+    institution: "ICFAI Business School (IBS)",
+    degree: "MBA",
+    field: "Finance & Operations",
+    period: "2021 – 2023",
+    icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 14l9-5-9-5-9 5 9 5z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" /></svg>`
+  },
+  {
+    institution: "St. Thomas' College of Engineering & Technology",
+    degree: "B.Tech",
+    field: "Electronics & Communication Engineering",
+    period: "2014 – 2018",
+    icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>`
+  }
+];
+---
+
+<section id="education" class="py-24 px-4">
+  <div class="max-w-4xl mx-auto">
+    <div class="text-center mb-16 reveal">
+      <p class="text-accent font-mono text-sm mb-2">ACADEMICS</p>
+      <h2 class="text-3xl sm:text-4xl font-bold text-text-primary">Education</h2>
+      <div class="w-16 h-1 bg-accent mx-auto mt-4 rounded-full"></div>
+    </div>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      {education.map((edu, index) => (
+        <div 
+          class="reveal card-glow bg-bg-secondary border border-bg-tertiary rounded-xl p-8"
+          style={`transition-delay: ${index * 150}ms;`}
+        >
+          <div class="flex items-start gap-4">
+            <div class="p-3 bg-accent/10 text-accent rounded-xl">
+              <Fragment set:html={edu.icon} />
+            </div>
+            <div class="flex-1">
+              <span class="inline-block px-2.5 py-0.5 text-xs font-mono bg-bg-primary text-text-muted border border-bg-tertiary rounded-md mb-2">
+                {edu.period}
+              </span>
+              <h3 class="text-lg font-bold text-text-primary mb-1">{edu.degree}</h3>
+              <p class="text-accent font-medium text-sm mb-1">{edu.field}</p>
+              <p class="text-text-muted text-sm">{edu.institution}</p>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

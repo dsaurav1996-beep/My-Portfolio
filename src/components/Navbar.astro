@@ -1,0 +1,88 @@
+---
+const navLinks = [
+  { href: '#hero', label: 'Home' },
+  { href: '#skills', label: 'Skills' },
+  { href: '#career', label: 'Career' },
+  { href: '#certifications', label: 'Certifications' },
+  { href: '#education', label: 'Education' },
+];
+---
+
+<nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-transparent">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16">
+      <!-- Desktop nav links -->
+      <div class="hidden md:flex items-center space-x-1">
+        {navLinks.map(link => (
+          <a 
+            href={link.href} 
+            class="px-4 py-2 text-sm font-medium text-text-secondary hover:text-accent transition-colors rounded-lg hover:bg-white/5"
+          >
+            {link.label}
+          </a>
+        ))}
+      </div>
+      
+      <!-- Right side: Resume button -->
+      <div class="flex items-center gap-2">
+        <a 
+          href="/resume.pdf" 
+          download
+          class="hidden md:inline-flex items-center gap-2 px-4 py-2 text-sm font-medium bg-accent text-bg-primary rounded-lg hover:bg-accent-light transition-colors"
+        >
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+          </svg>
+          Resume
+        </a>
+        
+        <!-- Mobile menu button -->
+        <button id="mobile-menu-btn" class="md:hidden p-2 text-text-secondary hover:text-accent">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Mobile menu -->
+  <div id="mobile-menu" class="hidden md:hidden bg-bg-primary/95 backdrop-blur-md border-t border-bg-tertiary">
+    <div class="px-4 py-3 space-y-1">
+      {navLinks.map(link => (
+        <a 
+          href={link.href} 
+          class="block px-4 py-2 text-sm font-medium text-text-secondary hover:text-accent hover:bg-white/5 rounded-lg transition-colors"
+        >
+          {link.label}
+        </a>
+      ))}
+      <a 
+        href="/resume.pdf" 
+        download
+        class="flex items-center justify-center gap-2 px-4 py-2 text-sm font-medium bg-accent text-bg-primary rounded-lg text-center mt-2"
+      >
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+        </svg>
+        Download Resume
+      </a>
+    </div>
+  </div>
+</nav>
+
+<script>
+  const mobileBtn = document.getElementById('mobile-menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+  
+  mobileBtn?.addEventListener('click', () => {
+    mobileMenu?.classList.toggle('hidden');
+  });
+  
+  // Close mobile menu on link click
+  mobileMenu?.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu.classList.add('hidden');
+    });
+  });
+</script>

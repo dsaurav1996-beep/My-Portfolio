@@ -1,0 +1,62 @@
+---
+const skillCategories = [
+  {
+    title: "Agile Delivery & Frameworks",
+    icon: `<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" /></svg>`,
+    skills: ["Scrum", "Scrum of Scrums", "Sprint Planning", "PI Planning", "Agile Ceremonies", "Sprint Reviews", "Retrospectives", "Agile Coaching", "Continuous Improvement", "Release Planning"]
+  },
+  {
+    title: "Product Ownership & Strategy",
+    icon: `<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" /></svg>`,
+    skills: ["Product Backlog Management", "Product Roadmap Planning", "User Story Mapping", "Feature Prioritization", "Acceptance Criteria", "Stakeholder Management", "Dependency Management", "BRD/MD050/BR100 Authoring"]
+  },
+  {
+    title: "Program & Delivery Management",
+    icon: `<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>`,
+    skills: ["Cross-Functional Team Leadership", "Risk Mitigation", "Incident Management", "RCA", "SLA Governance", "SIT/UAT Coordination", "Change Management", "Audit Compliance", "Business Continuity Planning"]
+  },
+  {
+    title: "Tools & Technologies",
+    icon: `<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /></svg>`,
+    skills: ["Jira", "Azure DevOps", "ServiceNow", "Oracle EBS (12.1.3/12.2.5)", "PEGA (v6.4/v7.3)", "More4Apps", "MS Excel", "PowerPoint", "MS Office"]
+  },
+  {
+    title: "Soft Skills",
+    icon: `<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" /></svg>`,
+    skills: ["Executive Communication", "Stakeholder Engagement", "Agile Facilitation", "Team Mentoring", "Client Demonstrations", "Knowledge Transfer", "Problem Solving"]
+  }
+];
+---
+
+<section id="skills" class="py-24 px-4">
+  <div class="max-w-7xl mx-auto">
+    <div class="text-center mb-16 reveal">
+      <p class="text-accent font-mono text-sm mb-2">EXPERTISE</p>
+      <h2 class="text-3xl sm:text-4xl font-bold text-text-primary">Core Competencies</h2>
+      <div class="w-16 h-1 bg-accent mx-auto mt-4 rounded-full"></div>
+    </div>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {skillCategories.map((category, index) => (
+        <div 
+          class="reveal card-glow bg-bg-secondary border border-bg-tertiary rounded-xl p-6"
+          style={`transition-delay: ${index * 100}ms;`}
+        >
+          <div class="flex items-center gap-3 mb-4">
+            <div class="p-2 bg-accent/10 text-accent rounded-lg">
+              <Fragment set:html={category.icon} />
+            </div>
+            <h3 class="text-lg font-semibold text-text-primary">{category.title}</h3>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            {category.skills.map(skill => (
+              <span class="px-2.5 py-1 text-xs font-mono bg-bg-primary text-text-secondary border border-bg-tertiary rounded-md hover:border-accent/30 hover:text-accent transition-colors">
+                {skill}
+              </span>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

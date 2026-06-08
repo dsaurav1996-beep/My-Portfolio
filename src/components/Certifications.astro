@@ -1,0 +1,87 @@
+---
+const certifications = [
+  {
+    name: "Certified Scrum Master",
+    abbr: "CSM",
+    issuer: "Scrum Alliance",
+    status: "Active",
+    year: "",
+    active: true,
+    logo: "/csm.png"
+  },
+  {
+    name: "Certified Scrum Product Owner",
+    abbr: "CSPO",
+    issuer: "Scrum Alliance",
+    status: "Active",
+    year: "",
+    active: true,
+    logo: "/cspo.png"
+  },
+  {
+    name: "Procurement Business Process Certified Foundations Associate Rel 2",
+    abbr: "Oracle",
+    issuer: "Oracle",
+    status: "Active",
+    year: "",
+    active: true,
+    logo: "/oracle.png"
+  },
+  {
+    name: "Certified System Architect",
+    abbr: "CSA",
+    issuer: "PEGA",
+    status: "",
+    year: "2020",
+    active: false,
+    logo: "/csa-pega.png"
+  }
+];
+---
+
+<section id="certifications" class="py-24 px-4">
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center mb-16 reveal">
+      <p class="text-accent font-mono text-sm mb-2">CREDENTIALS</p>
+      <h2 class="text-3xl sm:text-4xl font-bold text-text-primary">Certifications</h2>
+      <div class="w-16 h-1 bg-accent mx-auto mt-4 rounded-full"></div>
+    </div>
+    
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      {certifications.map((cert, index) => (
+        <div 
+          class="reveal card-glow bg-bg-secondary border border-bg-tertiary rounded-xl p-6 text-center group flex flex-col"
+          style={`transition-delay: ${index * 100}ms;`}
+        >
+          <!-- Logo -->
+          <div class="mx-auto w-28 h-28 mb-5 bg-white rounded-2xl flex items-center justify-center overflow-hidden shadow-sm">
+            <img 
+              src={cert.logo} 
+              alt={`${cert.abbr} logo`}
+              class="w-36 h-36 object-contain"
+              loading="lazy"
+            />
+          </div>
+          
+          <h3 class="text-lg font-bold text-text-primary mb-1">{cert.abbr}</h3>
+          <p class="text-sm text-text-secondary mb-3 leading-tight flex-1">{cert.name}</p>
+          
+          <div class="flex items-center justify-center gap-2 text-xs mt-auto">
+            <span class="text-text-muted">{cert.issuer}</span>
+            {cert.active && (
+              <span class="inline-flex items-center gap-1 px-2 py-0.5 bg-success/10 text-success rounded-full">
+                <span class="w-1.5 h-1.5 bg-success rounded-full"></span>
+                Active
+              </span>
+            )}
+            {cert.year && (
+              <span class="px-2 py-0.5 bg-bg-tertiary text-text-muted rounded-full">
+                {cert.year}
+              </span>
+            )}
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

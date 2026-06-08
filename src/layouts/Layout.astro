@@ -1,0 +1,79 @@
+---
+import '../styles/global.css';
+
+export interface Props {
+  title?: string;
+  description?: string;
+}
+
+const { 
+  title = "Saurav Das | Scrum Master & Product Owner",
+  description = "Certified Scrum Master (CSM) and Certified Scrum Product Owner (CSPO) with 3.5+ years of experience leading Agile delivery and enterprise transformation initiatives."
+} = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <meta name="author" content="Saurav Das" />
+    <meta name="theme-color" content="#0f172a" />
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+    
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{title}</title>
+    
+    <style is:inline>
+      /* Prevent FOUC */
+      html { background-color: #0f172a; }
+    </style>
+  </head>
+  <body class="min-h-screen antialiased">
+    <slot />
+    
+    <script>
+      // Intersection Observer for scroll reveal
+      const observerOptions = {
+        root: null,
+        rootMargin: '0px 0px -50px 0px',
+        threshold: 0.1
+      };
+      
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, observerOptions);
+      
+      document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+      
+      // Navbar scroll effect
+      const navbar = document.getElementById('navbar');
+      if (navbar) {
+        window.addEventListener('scroll', () => {
+          if (window.scrollY > 50) {
+            navbar.classList.add('bg-bg-primary/90', 'backdrop-blur-md', 'shadow-lg');
+            navbar.classList.remove('bg-transparent');
+          } else {
+            navbar.classList.remove('bg-bg-primary/90', 'backdrop-blur-md', 'shadow-lg');
+            navbar.classList.add('bg-transparent');
+          }
+        });
+      }
+    </script>
+  </body>
+</html>
