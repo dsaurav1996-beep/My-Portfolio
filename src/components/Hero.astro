@@ -1,96 +1,346 @@
 ---
 ---
 
-<section id="hero" class="relative min-h-screen flex items-center justify-center overflow-hidden px-4">
-  <!-- Background orbs -->
-  <div class="absolute inset-0 overflow-hidden pointer-events-none">
-    <div class="orb absolute top-20 left-[10%] w-72 h-72 bg-accent/10 rounded-full blur-3xl"></div>
-    <div class="orb orb-delay-1 absolute top-40 right-[15%] w-96 h-96 bg-accent/5 rounded-full blur-3xl"></div>
-    <div class="orb orb-delay-2 absolute bottom-20 left-[30%] w-64 h-64 bg-accent/8 rounded-full blur-3xl"></div>
-  </div>
-  
-  <div class="relative z-10 max-w-4xl mx-auto text-center">
-    <!-- Role badges -->
-    <div class="flex flex-wrap justify-center gap-2 mb-6 reveal">
-      <span class="px-3 py-1 text-xs font-mono font-medium bg-accent/10 text-accent border border-accent/20 rounded-full">
-        CSM
-      </span>
-      <span class="px-3 py-1 text-xs font-mono font-medium bg-accent/10 text-accent border border-accent/20 rounded-full">
-        CSPO
-      </span>
-      <span class="px-3 py-1 text-xs font-mono font-medium bg-accent/10 text-accent border border-accent/20 rounded-full">
-        Agile Consultant
-      </span>
+<section id="hero" class="relative min-h-screen flex items-center overflow-hidden px-4 sm:px-8 lg:px-16">
+  <!-- Layered background -->
+  <div class="absolute inset-0 bg-[#0A1628]"></div>
+  <div class="iso-grid"></div>
+  <div class="teal-bloom"></div>
+  <div class="hero-contrast-left"></div>
+  <div class="hero-contrast-vignette"></div>
+
+  <!-- Floating story cards (right half) -->
+  <div class="floating-cards" aria-hidden="true">
+    <!-- Card 1: Done -->
+    <div class="story-card">
+      <div class="story-card-header">
+        <span class="w-2 h-2 rounded-full bg-green-500"></span>
+        <span class="text-green-400">Done</span>
+      </div>
+      <div class="story-card-title">Release v4.2</div>
+      <div class="story-badge bg-green-500/10 text-green-400 border border-green-500/20">
+        <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+        </svg>
+        Shipped
+      </div>
     </div>
-    
-    <!-- Name -->
-    <h1 class="text-5xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight mb-4 reveal" style="transition-delay: 100ms;">
-      <span class="gradient-text">Saurav Das</span>
-    </h1>
-    
-    <!-- Title -->
-    <p class="text-xl sm:text-2xl text-text-secondary font-light mb-6 reveal" style="transition-delay: 200ms;">
-      Scrum Master & Product Owner
-    </p>
-    
-    <!-- Summary -->
-    <p class="max-w-2xl mx-auto text-text-muted leading-relaxed mb-10 reveal" style="transition-delay: 300ms;">
-      Certified Scrum Master and Product Owner with 3.5+ years leading Agile delivery, 
-      Scrum of Scrums, and enterprise transformation within Oracle P2P ecosystems. 
-      Proven track record of zero-defect go-lives, cross-functional team leadership, 
-      and driving business value through data-driven Agile practices.
-    </p>
-    
-    <!-- CTAs -->
-    <div class="flex flex-wrap justify-center gap-4 mb-12 reveal" style="transition-delay: 400ms;">
-      <a 
-        href="#career" 
-        class="px-8 py-3 bg-accent text-bg-primary font-semibold rounded-lg hover:bg-accent-light transition-all hover:shadow-lg hover:shadow-accent/25"
-      >
-        View Experience
-      </a>
-      <a 
-        href="https://linkedin.com/in/Saurav-Das0016" 
-        target="_blank"
-        rel="noopener noreferrer"
-        class="px-8 py-3 bg-bg-secondary text-text-primary font-semibold rounded-lg border border-bg-tertiary hover:border-accent/50 hover:bg-bg-tertiary/50 transition-all"
-      >
-        LinkedIn Profile
-      </a>
+
+    <!-- Card 2: In Progress -->
+    <div class="story-card">
+      <div class="story-card-header">
+        <span class="w-2 h-2 rounded-full bg-accent"></span>
+        <span class="text-accent">In Progress</span>
+      </div>
+      <div class="story-card-title">Sprint N Planning</div>
+      <div class="story-progress">
+        <div class="story-progress-bar" style="--progress: 70%"></div>
+      </div>
+      <div class="mt-2 text-xs text-text-muted font-mono">70% complete</div>
     </div>
-    
-    <!-- Contact bar -->
-    <div class="flex flex-wrap justify-center gap-6 text-sm text-text-muted reveal" style="transition-delay: 500ms;">
-      <a href="mailto:dsaurav1996@gmail.com" class="flex items-center gap-2 hover:text-accent transition-colors">
-        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+
+    <!-- Card 3: Backlog -->
+    <div class="story-card">
+      <div class="story-card-header">
+        <span class="w-2 h-2 rounded-full bg-amber"></span>
+        <span class="text-amber">Backlog</span>
+      </div>
+      <div class="story-card-title">Q3 Roadmap Review</div>
+      <div class="story-badge bg-amber/10 text-amber border border-amber/20">
+        <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
         </svg>
-        dsaurav1996@gmail.com
-      </a>
-      <span class="hidden sm:inline text-bg-tertiary">|</span>
-      <a href="tel:+919051289167" class="flex items-center gap-2 hover:text-accent transition-colors">
-        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-        </svg>
-        +91-9051289167
-      </a>
-      <span class="hidden sm:inline text-bg-tertiary">|</span>
-      <span class="flex items-center gap-2">
-        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-        </svg>
-        Hyderabad, India
-      </span>
+        High Priority
+      </div>
     </div>
   </div>
-  
+
+  <!-- Live sprint counter widget -->
+  <div class="sprint-widget reveal" style="transition-delay: 200ms;">
+    <span class="inline-block w-1.5 h-1.5 bg-accent rounded-full mr-2 animate-pulse"></span>
+    Currently in <strong id="sprint-number">Sprint 1</strong>
+  </div>
+
+  <!-- Main content grid -->
+  <div class="relative z-10 w-full max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-12 items-center">
+    <!-- Text block -->
+    <div class="col-span-1 lg:col-span-3 text-center lg:text-left pt-20 lg:pt-0">
+      <!-- Dual role badge -->
+      <div class="flex justify-center lg:justify-start mb-6 reveal" style="transition-delay: 0ms;">
+        <span class="inline-flex items-center gap-2 px-4 py-1.5 text-xs font-mono font-medium bg-accent/10 text-accent border border-accent/20 rounded-full backdrop-blur-sm">
+          <span>⚡ Scrum Master</span>
+          <span class="text-text-muted">·</span>
+          <span>🎯 Product Owner</span>
+        </span>
+      </div>
+
+      <!-- Name with tooltip -->
+      <div class="hero-name-wrap relative inline-block mb-4 reveal" style="transition-delay: 100ms;">
+        <h1 class="hero-name text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-extrabold tracking-tight">
+          <span class="name-first">Saurav</span>
+          <span class="name-last">Das</span>
+        </h1>
+        <span class="hero-tooltip">Turning ambiguity into shipped features.</span>
+      </div>
+
+      <!-- Role -->
+      <p class="text-xl sm:text-2xl lg:text-3xl text-text-secondary font-light mb-4 reveal" style="transition-delay: 200ms;">
+        Scrum Master & Product Owner
+      </p>
+
+      <!-- Tagline that morphs with role toggle -->
+      <p id="role-tagline" class="max-w-2xl mx-auto lg:mx-0 text-text-muted leading-relaxed mb-6 text-base sm:text-lg reveal" style="transition-delay: 300ms;">
+        I align teams, own the backlog, and turn business goals into working software.
+      </p>
+
+      <!-- Role toggle -->
+      <div class="flex justify-center lg:justify-start mb-8 reveal" style="transition-delay: 400ms;">
+        <div class="role-toggle" role="group" aria-label="Toggle role focus">
+          <button id="btn-sm" class="active-teal" type="button" aria-pressed="true">
+            🔄 Scrum Master
+          </button>
+          <button id="btn-po" class="inactive" type="button" aria-pressed="false">
+            🎯 Product Owner
+          </button>
+        </div>
+      </div>
+
+      <!-- Bio -->
+      <p class="max-w-2xl mx-auto lg:mx-0 text-text-muted leading-relaxed mb-10 text-base sm:text-lg px-2 lg:px-0 reveal" style="transition-delay: 500ms;">
+        Certified Scrum Master and Product Owner with 4+ years leading Agile delivery, Scrum of Scrums, and enterprise transformation across Automation and Project Management domains. I facilitate cross-functional teams, own and prioritize product backlogs, run data-driven sprint ceremonies, and deliver zero-defect releases through stakeholder alignment, continuous improvement, and outcome-focused execution.
+      </p>
+
+      <!-- CTAs -->
+      <div class="flex flex-wrap justify-center lg:justify-start gap-4 mb-12 reveal" style="transition-delay: 600ms;">
+        <a href="#career" class="cta-primary px-8 py-3.5 font-semibold rounded-xl flex items-center gap-2">
+          View My Roadmap
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+          </svg>
+        </a>
+        <a href="/resume.pdf" download class="cta-ghost px-8 py-3.5 font-semibold rounded-xl flex items-center gap-2">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+          </svg>
+          Download Resume
+        </a>
+      </div>
+
+      <!-- Contact bar -->
+      <div class="flex flex-wrap justify-center lg:justify-start gap-6 text-sm text-text-muted reveal" style="transition-delay: 700ms;">
+        <a href="mailto:dsaurav1996@gmail.com" class="contact-link flex items-center gap-2 hover:text-accent transition-colors">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+          </svg>
+          dsaurav1996@gmail.com
+        </a>
+        <span class="hidden sm:inline text-bg-tertiary">|</span>
+        <a href="tel:+919051289167" class="contact-link flex items-center gap-2 hover:text-accent transition-colors">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+          </svg>
+          +91-9051289167
+        </a>
+        <span class="hidden sm:inline text-bg-tertiary">|</span>
+        <span class="flex items-center gap-2">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+          </svg>
+          Hyderabad, India
+        </span>
+      </div>
+
+      <!-- Mobile Live Sprint Dashboard (stacks below text) -->
+      <div class="sprint-dashboard lg:hidden mt-10 reveal" style="transition-delay: 800ms;">
+        <div class="dashboard-header">
+          <div class="dashboard-title">
+            <span class="pulse-dot"></span>
+            <span class="dashboard-sprint-number">Sprint N</span>
+          </div>
+          <span class="dashboard-badge">Active</span>
+        </div>
+
+        <svg class="burndown-chart" viewBox="0 0 280 70" preserveAspectRatio="none">
+          <path class="burndown-line" d="M 0,60 C 40,55 70,45 100,48 C 130,51 160,30 190,28 C 220,26 250,12 280,8" />
+          <circle cx="280" cy="8" r="3" fill="#00C9B1" />
+        </svg>
+
+        <div class="metric-chips">
+          <div class="metric-chip">
+            <span>✅</span>
+            <span>18 Stories Done</span>
+          </div>
+          <div class="metric-chip">
+            <span>🔄</span>
+            <span>4 In Progress</span>
+          </div>
+          <div class="metric-chip">
+            <span>📋</span>
+            <span>6 Backlog</span>
+          </div>
+        </div>
+
+        <div class="dashboard-velocity-label">Team Velocity — Last 6 Sprints</div>
+        <div class="dashboard-velocity-bars">
+          <div class="dashboard-velocity-bar"></div>
+          <div class="dashboard-velocity-bar"></div>
+          <div class="dashboard-velocity-bar"></div>
+          <div class="dashboard-velocity-bar"></div>
+          <div class="dashboard-velocity-bar"></div>
+          <div class="dashboard-velocity-bar"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right side: Live Sprint Dashboard (desktop) -->
+    <div class="hidden lg:flex col-span-2 flex-col items-end justify-center">
+      <div class="sprint-dashboard reveal" style="transition-delay: 300ms;">
+        <div class="dashboard-header">
+          <div class="dashboard-title">
+            <span class="pulse-dot"></span>
+            <span class="dashboard-sprint-number">Sprint N</span>
+          </div>
+          <span class="dashboard-badge">Active</span>
+        </div>
+
+        <!-- Burn-down line chart -->
+        <svg class="burndown-chart" viewBox="0 0 280 70" preserveAspectRatio="none">
+          <path class="burndown-line" d="M 0,60 C 40,55 70,45 100,48 C 130,51 160,30 190,28 C 220,26 250,12 280,8" />
+          <circle cx="280" cy="8" r="3" fill="#00C9B1" />
+        </svg>
+
+        <!-- Metric chips -->
+        <div class="metric-chips">
+          <div class="metric-chip">
+            <span>✅</span>
+            <span>18 Stories Done</span>
+          </div>
+          <div class="metric-chip">
+            <span>🔄</span>
+            <span>4 In Progress</span>
+          </div>
+          <div class="metric-chip">
+            <span>📋</span>
+            <span>6 Backlog</span>
+          </div>
+        </div>
+
+        <!-- Velocity chart -->
+        <div class="dashboard-velocity-label">Team Velocity — Last 6 Sprints</div>
+        <div class="dashboard-velocity-bars">
+          <div class="dashboard-velocity-bar"></div>
+          <div class="dashboard-velocity-bar"></div>
+          <div class="dashboard-velocity-bar"></div>
+          <div class="dashboard-velocity-bar"></div>
+          <div class="dashboard-velocity-bar"></div>
+          <div class="dashboard-velocity-bar"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- Scroll indicator -->
-  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-    <a href="#skills" class="text-text-muted hover:text-accent transition-colors">
-      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 scroll-indicator">
+    <a href="#skills" class="flex flex-col items-center gap-2 text-text-muted hover:text-accent transition-colors">
+      <span class="text-xs font-mono tracking-widest uppercase opacity-60">Explore</span>
+      <svg class="w-6 h-6 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
       </svg>
     </a>
   </div>
 </section>
+
+<script>
+  (function() {
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    // =====================================================
+    // Sprint counter — generalised: today is Sprint N, +1 every 2 weeks
+    // =====================================================
+    const baseDate = new Date();
+    baseDate.setHours(0, 0, 0, 0);
+    const now = new Date();
+    const weeksElapsed = Math.floor((now - baseDate) / (1000 * 60 * 60 * 24 * 7));
+    const sprintOffset = Math.floor(weeksElapsed / 2);
+
+    function formatSprint(offset) {
+      return offset === 0 ? 'Sprint N' : `Sprint N+${offset}`;
+    }
+
+    const sprintLabel = formatSprint(sprintOffset);
+
+    const sprintEl = document.getElementById('sprint-number');
+    if (sprintEl) {
+      sprintEl.textContent = sprintLabel;
+    }
+
+    // Sync dashboard headers with the same sprint label
+    document.querySelectorAll('.dashboard-sprint-number').forEach(el => {
+      el.textContent = sprintLabel;
+    });
+
+    // =====================================================
+    // Role toggle — morphs tagline, accent color, and icon
+    // =====================================================
+    const tagline = document.getElementById('role-tagline');
+    const btnSm = document.getElementById('btn-sm');
+    const btnPo = document.getElementById('btn-po');
+
+    const taglines = {
+      sm: 'Facilitating stand-ups, removing blockers, and helping teams ship with predictability and flow.',
+      po: 'Owning the backlog, prioritizing outcomes, and translating stakeholder goals into user value.'
+    };
+
+    function setRole(role) {
+      if (!tagline || !btnSm || !btnPo) return;
+
+      if (role === 'sm') {
+        tagline.textContent = taglines.sm;
+        btnSm.className = 'active-teal';
+        btnSm.setAttribute('aria-pressed', 'true');
+        btnPo.className = 'inactive';
+        btnPo.setAttribute('aria-pressed', 'false');
+      } else {
+        tagline.textContent = taglines.po;
+        btnPo.className = 'active-amber';
+        btnPo.setAttribute('aria-pressed', 'true');
+        btnSm.className = 'inactive';
+        btnSm.setAttribute('aria-pressed', 'false');
+      }
+    }
+
+    if (btnSm && btnPo) {
+      btnSm.addEventListener('click', () => setRole('sm'));
+      btnPo.addEventListener('click', () => setRole('po'));
+    }
+
+    // =====================================================
+    // Replay dashboard animations on scroll into view
+    // =====================================================
+    const dashboards = document.querySelectorAll('.sprint-dashboard');
+    if (!prefersReducedMotion) {
+      dashboards.forEach(dashboard => {
+        const line = dashboard.querySelector('.burndown-line');
+        const bars = dashboard.querySelectorAll('.dashboard-velocity-bar');
+        const replayObserver = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              if (line) {
+                line.style.animationName = 'none';
+                void line.offsetWidth;
+                line.style.animationName = 'drawLine';
+              }
+              bars.forEach(bar => {
+                bar.style.animationName = 'none';
+                void bar.offsetWidth;
+                bar.style.animationName = 'growBar';
+              });
+            }
+          });
+        }, { threshold: 0.5 });
+        replayObserver.observe(dashboard);
+      });
+    }
+  })();
+</script>
